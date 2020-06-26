@@ -11,7 +11,7 @@ Take the following steps to start the project:
 5. If port 4200 is not available, check for avaiable port and enter the following line in package.json file in the repo:
   "scripts": {
     ..
-    "start": "ng serve --port <port-number>",
+    "start": "ng serve --port port-number",
     ..
     }
   and then run npm start
