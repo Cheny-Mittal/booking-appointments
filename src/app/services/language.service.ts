@@ -35,14 +35,30 @@ export class LanguageService {
       with: 'With',
       when: 'When',
       to: 'to',
+      allMeetings: 'All Meetings',
+      fullName: 'Full Name',
+      meetingDate: 'Meeting Date',
+      startTime: 'Start Time',
+      endTime: 'End Time',
+      schedule: 'Schedule the meeting',
+      enterName: 'Enter Name',
+      chooseDate: 'Choose a Date'
     };
     let languageDataHindi = {
       latestHeading: 'आगामी नियुक्ति',
       latestNoAppointment: 'कोई अपॉइंटमेंट अनुसूचित नहीं',
       bookNew: 'नई नियुक्ति बुक करें',
-      with: 'साथ',
+      with: 'किसके साथ',
       when: 'कब',
       to: 'से',
+      allMeetings: 'सभी नियुक्ति',
+      fullName: 'पूरा नाम',
+      meetingDate: 'मिलने की तारीख',
+      startTime: 'प्रारम्भ का समय',
+      endTime: 'अंतिम समय',
+      schedule: 'मीटिंग शेड्यूल करें',
+      enterName: 'कृपया नाम दर्ज करें',
+      chooseDate: 'एक तिथि चुनें'
     };
     return (this.language === "English") ? languageDataEnglish : languageDataHindi;
   }

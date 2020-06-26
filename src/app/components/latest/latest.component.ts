@@ -10,9 +10,9 @@ import { LanguageService } from "../../services/language.service";
 export class LatestComponent implements OnInit, OnChanges {
 
   @Input() latestMeeting: Meeting[] = [];
+  @Input() languageData = {};
   latest: any = "cheny";
   @Output() newMeeting = new EventEmitter<any>();
-  languageData: {};
 
   constructor(public languageService: LanguageService ) { 
     
@@ -32,7 +32,19 @@ export class LatestComponent implements OnInit, OnChanges {
   }
 
   latestMeetingChanged(latestMeeting) {
-    this.latest = latestMeeting && latestMeeting.length ? latestMeeting[latestMeeting.length - 1] : '';
+    if(latestMeeting && latestMeeting.length){
+      this.latestMeeting.sort(this.sortByDate);
+      this.latestMeeting.sort(this.sortByTime);
+      this.latest = latestMeeting[0];
+    }
+  }
+
+  sortByDate(a, b){
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  }
+
+  sortByTime(a, b){
+    return new Date(a.startingHour).getTime() - new Date(b.startingHour).getTime();
   }
 
 

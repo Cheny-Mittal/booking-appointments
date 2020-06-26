@@ -14,5 +14,6 @@ Take the following steps to start the project:
     "start": "ng serve --port port-number",
     ..
     }
-  and then run npm start
+  and then run "npm start".
+6. Open "http://localhost:4200" in your browser. And in case of a different port, enter that port number instead of '4200'.
 

@@ -39,6 +39,6 @@
     </g>
 </svg>
 
-<app-latest *ngIf="!bookNew" [latestMeeting]="allBookings" (newMeeting)="bookNew = true"></app-latest>
-<app-book-new *ngIf="bookNew" (onMeetingBooked)="changeBookings($event)"></app-book-new>
-<app-all-meetings *ngIf="allBookings.length" [allBookings]="allBookings"></app-all-meetings>
+<app-latest *ngIf="!bookNew" [languageData]="languageData" [latestMeeting]="allBookings" (newMeeting)="bookNew = true"></app-latest>
+<app-book-new *ngIf="bookNew" [languageData]="languageData" (onMeetingBooked)="changeBookings($event)"></app-book-new>
+<app-all-meetings *ngIf="allBookings.length" [languageData]="languageData" [allBookings]="allBookings"></app-all-meetings>

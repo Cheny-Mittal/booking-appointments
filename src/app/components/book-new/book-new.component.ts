@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as SecureLS from 'secure-ls';
 import { UtilFunctions } from 'src/app/config/util';
@@ -13,6 +13,7 @@ export class BookNewComponent implements OnInit {
   bookingForm: FormGroup;
   ls = new SecureLS({ encodingType: 'aes' });
   @Output() onMeetingBooked = new EventEmitter<any>();
+  @Input() languageData = {};
   currentDate = new Date();
   constructor(private utils: UtilFunctions) {
     this.bookingForm = new FormGroup({
@@ -28,6 +29,7 @@ export class BookNewComponent implements OnInit {
   }
 
   createNewMeeting() {
+    console.log('here');
     const first = this.bookingForm.get('startTime').value;
     const second = this.bookingForm.get('endTime').value;
     if (UtilFunctions.isTimeValid(first, second) && UtilFunctions.isNameValid(this.bookingForm.get('name').value)) {

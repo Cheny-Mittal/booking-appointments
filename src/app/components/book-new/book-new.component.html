@@ -1,7 +1,7 @@
 <section class="support_integration_area">
     <div class="container">
         <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
-            <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Book a New Meeting</h2>
+            <h2 class="f_p f_size_30 l_height50 f_600 t_color3">{{languageData['bookNew']}}</h2>
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-2 col-sm-12">
@@ -12,18 +12,18 @@
                     <form action="" class="row no-marg" [formGroup]="bookingForm" (submit)="createNewMeeting()">
                         <div class="form-wrapper">
                             <mat-form-field class="d-block" appearance="legacy">
-                                <mat-label>Full Name</mat-label>
-                                <input matInput placeholder="Enter Name" formControlName="name">
+                                <mat-label>{{languageData['fullName']}}</mat-label>
+                                <input matInput placeholder="{{languageData['enterName']}}" formControlName="name">
                             </mat-form-field>
                             <mat-form-field class="d-block" appearance="legacy" color="basic">
-                                <mat-label>Meeting Date</mat-label>
-                                <input matInput [min]="currentDate" [matDatepicker]="picker" placeholder="Choose Date" formControlName="date">
+                                <mat-label>{{languageData['meetingDate']}}</mat-label>
+                                <input matInput [min]="currentDate" [matDatepicker]="picker" placeholder="{{languageData['chooseDate']}}" formControlName="date">
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                             </mat-form-field>
                             <div class="booking-time">
                                 <div class="time-wrappers">
-                                    <span class="date-label">Start Time</span>
+                                    <span class="date-label">{{languageData['startTime']}}</span>
                                     <div class="date-form-elements">
                                         <mat-form-field class="d-block" appearance="legacy" color="basic">
                                             <input type="time" matInput formControlName="category" formControlName="startTime">
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="time-wrappers">
-                                    <span class="date-label">End Time</span>
+                                    <span class="date-label">{{languageData['endTime']}}</span>
                                     <div class="date-form-elements">
                                         <mat-form-field class="d-block" appearance="legacy" color="basic">
                                             <input type="time" matInput formControlName="endTime">
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="new-appointment">Schedule the Meeting</button>
+                            <button type="submit" class="new-appointment">{{languageData['schedule']}}</button>
                         </div>
                     </form>
                 </div>

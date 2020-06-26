@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AllMeetingsComponent } from '../all-meetings/all-meetings.component';
 import * as SecureLS from 'secure-ls'
-// import SecureLs from 'secure-ls';
+import { LanguageService } from "../../services/language.service";
 
 
 @Component({
@@ -14,12 +14,14 @@ export class HomepageComponent implements OnInit {
   bookNew : boolean = false;
   allBookings: [];
   ls = new SecureLS({ encodingType: 'aes' });
+  languageData: {};
 
-  constructor() {
+  constructor(public languageService: LanguageService ) { 
     this.allBookings = this.ls.get('bookingForm');
   }
 
   ngOnInit() {
+    this.languageData = this.languageService.getLanguageData();
   }
 
   changeBookings(value){
