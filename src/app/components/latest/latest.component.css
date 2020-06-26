@@ -1,0 +1,11 @@
+button{
+    margin-top: 40px;
+    border-radius: 45px;
+    background: #6754e2;
+    color: #fff;
+    padding: 11px 32px;
+}
+
+.banner_top p{
+    margin-bottom: 20px;
+}

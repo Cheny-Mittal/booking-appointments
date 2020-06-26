@@ -1,0 +1,19 @@
+<section class="support_home_area">
+    <div class="banner_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">{{latest ? languageData['latestHeading'] : languageData['latestNoAppointment']}}</h2>
+                    <ng-container *ngIf="latest">
+                        <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">{{languageData['with']}}: <span class="f_700">{{latest?.name}}</span></p>
+                        <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">{{languageData['when']}}: <span class="f_700">{{latest?.date | date: 'MMM d, y'}}, {{latest?.startTime}}</span> {{languageData['to']}} <span class="f_700">{{latest?.endTime}}</span></p>
+                    </ng-container>
+                    <button class="btn btn_submit f_size_15 f_500" type="button" (click)="bookNew()">{{languageData['bookNew']}}</button>
+                </div>
+            </div>
+            <div class="support_home_img wow fadeInUp" data-wow-delay="0.9s">
+                <img src="../../../assets/images/banner.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
